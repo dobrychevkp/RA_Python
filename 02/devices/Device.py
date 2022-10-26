@@ -21,11 +21,19 @@ def is_readable(device: Device) -> bool:
     return device.mode == DeviceMode.ReadOnly or device.mode == DeviceMode.ReadWrite
 
 
+def is_writable(device: Device) -> bool:
+    return device.mode == DeviceMode.WriteOnly or device.mode == DeviceMode.ReadWrite
+
+
 def read_line(device: Device) -> str:
     if not is_readable(device):
         raise PermissionError('Reading from the device not allowed.')
 
     return __take_line(device.data)
+
+
+def write_line(device: Device, line: str):
+    pass
 
 
 def open_device(name: str) -> Device:
