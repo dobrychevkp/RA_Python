@@ -43,6 +43,7 @@ def open_device(name: str) -> Device:
         '/devices/dev2': Device(DeviceMode.ReadWrite, []),
         '/devices/dev3': Device(DeviceMode.ReadWrite, ['1', '2', '**']),
         '/devices/dev4': Device(DeviceMode.ReadOnly, ['line_1', 'line_2']),
+        '/devices/dev5': Device(DeviceMode.ReadOnly, ['line_1']),
     }
 
     try:
