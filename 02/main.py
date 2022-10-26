@@ -25,7 +25,7 @@ devices = {
 device = devices['/devices/dev3']
 
 for i in range(3):
-    if not device.mode == DeviceMode.ReadOnly:
+    if not (device.mode == DeviceMode.ReadOnly or device.mode == DeviceMode.ReadWrite):
         raise PermissionError('Reading from the device not allowed.')
 
     print(device.data.pop(0))
