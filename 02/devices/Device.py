@@ -32,6 +32,10 @@ def read_line(device: Device) -> str:
     return __take_line(device.data)
 
 
+def write_line(device: Device, line: str):
+    pass
+
+
 def open_device(name: str) -> Device:
     devices = {
         '/devices/dev0': Device(DeviceMode.ReadOnly, ['line_1', 'line_2']),
