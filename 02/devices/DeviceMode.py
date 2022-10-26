@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import IntFlag
 
 
-class DeviceMode(Enum):
-    ReadOnly = 0x01
-    WriteOnly = 0x02
-    ReadWrite = 0x03
+class DeviceMode(IntFlag):
+    ReadOnly = 0x1
+    WriteOnly = 0x2
+    ReadWrite = ReadOnly | WriteOnly

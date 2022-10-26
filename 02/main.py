@@ -3,9 +3,10 @@ from devices.Device import *
 
 if __name__ == '__main__':
     try:
-        device: Device = open_device('/devices/dev5')
+        device: Device = open_device('/devices/dev3')
 
-        for _ in range(3):
+        for i in range(3):
             print(read_line(device))
-    except Exception as e:
-        print(f'error: {e}')
+
+    except Exception as exception:
+        print(f'Error: {exception}')
