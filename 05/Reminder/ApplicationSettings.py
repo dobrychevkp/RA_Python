@@ -74,13 +74,9 @@ class ApplicationSettings(object):
         except KeyError:
             return default_value
 
-    @staticmethod
-    def __home_directory() -> Path:
-        return Path.expanduser(Path('~'))
-
     @classmethod
     def __local_config_path(cls) -> Path:
-        return cls.__home_directory().joinpath('.config', cls.__organization_name, cls.__config_file_name)
+        return Path.home().joinpath('.config', cls.__organization_name, cls.__config_file_name)
 
 
 # NOTE: Сразу создадим экземпляр класса настроек.
