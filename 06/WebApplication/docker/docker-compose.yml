@@ -1,0 +1,28 @@
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    ports:
+      - "38018:27017"
+    volumes:
+      - /tmp/webapp/data/db:/data/db
+    networks:
+      - default
+
+  webapp:
+    container_name: webapp
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    networks:
+      - default
+
+networks:
+  default:
+    name: webapp_network

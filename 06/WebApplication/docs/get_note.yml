@@ -1,0 +1,17 @@
+description: Получить заметку.
+tags:
+- notes
+produces:
+- application/json
+parameters:
+- in: path
+  name: note_id
+  description: идентификатор заметки
+  required: true
+  schema:
+    type: string
+responses:
+    "200":
+        description: возвращает запрошенную заметку
+    "404":
+        description: запрошенная заметка не найдена

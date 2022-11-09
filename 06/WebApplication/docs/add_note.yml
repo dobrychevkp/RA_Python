@@ -1,0 +1,24 @@
+description: Добавить новую заметку.
+tags:
+- notes
+produces:
+- application/json
+parameters:
+- in: body
+  name: note
+  description: данные заметки
+  required: true
+  schema:
+    type: object
+    properties:
+      author:
+        type: string
+        description: автор
+      message:
+        type: string
+        description: сообщение
+responses:
+    "201":
+        description: заметка успешно добавлена
+    "400":
+        description: некорректные входные данные

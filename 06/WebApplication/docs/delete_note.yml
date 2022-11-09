@@ -1,0 +1,17 @@
+description: Удалить заметку.
+tags:
+- notes
+produces:
+- application/json
+parameters:
+- in: path
+  name: note_id
+  description: идентификактор заметки
+  required: true
+  schema:
+    type: string
+responses:
+    "204":
+        description: заметка успешно удалена
+    "404":
+      description: заметка не найдена

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }}</title>
+</head>
+<body>
+    <table>
+        {% for note in notes %}
+        <tr>
+            <td>{{ note.author }}</td>
+            <td>{{ note.message }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/notes" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+
+    <label for="author">author</label>
+    <input id="author" name="author" type="text" value="" autofocus/>
+
+    <label for="message">message</label>
+    <input id="message" name="message" type="text" value=""/>
+
+    <input type="submit" value="add"/>
+</form>
+</body>
+</html>
